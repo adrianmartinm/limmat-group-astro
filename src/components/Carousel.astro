@@ -1,0 +1,39 @@
+---
+const images = [
+  '/images/smart-solutions-1.png',
+  '/images/smart-solutions-2.png',
+  '/images/smart-solutions-3.png',
+];
+---
+
+<div class="relative w-full overflow-hidden">
+  <div class="flex h-[35vh] md:h-[40vh]" id="carousel">
+    {images.map((src) => (
+      <img src={src} alt="Carousel Image" class="w-full flex-shrink-0" />
+    ))}
+  </div>
+</div>
+
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('#carousel img');
+    let currentIndex = 0;
+    const intervalTime = 2500; // Intervalo en milisegundos
+
+    function showSlide(index) {
+      if (index >= slides.length) currentIndex = 0;
+      if (index < 0) currentIndex = slides.length - 1;
+      slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+      });
+    }
+
+    function nextSlide() {
+      currentIndex++;
+      showSlide(currentIndex);
+    }
+
+    showSlide(currentIndex); // Mostrar la primera diapositiva
+    setInterval(nextSlide, intervalTime); // Cambiar diapositiva automáticamente
+  });
+</script>
