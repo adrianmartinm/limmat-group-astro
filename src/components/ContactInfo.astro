@@ -1,0 +1,16 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const { contactDetails } = Astro.props;
+---
+
+<div>
+  {contactDetails.map((item) => (
+    <p class="text-base my-1 flex items-start">
+      <Icon name={item.icon} class="mr-3 text-xl" />
+      <span class="whitespace-pre-line">
+        {item.text}
+      </span>
+    </p>
+  ))}
+</div>
