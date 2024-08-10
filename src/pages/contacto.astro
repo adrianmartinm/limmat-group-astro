@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroVideo from '../components/HeroVideo.astro';
+import Contact from '../components/Contact.astro';
+import Section from '../components/Section.astro';
+---
+
+<Layout>
+	<HeroVideo title="Contacta con nostros" videoFileName="contact.mp4" />	
+	<main class="w-100 md:w-[75vw]">
+		<Section>
+			<Contact />
+		</Section>
+	</main>
+</Layout>

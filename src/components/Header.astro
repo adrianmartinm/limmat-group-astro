@@ -1,7 +1,4 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
-import Logo from './Logo.astro';
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-black text-white">
@@ -9,14 +6,14 @@ import Logo from './Logo.astro';
 	  <div class="container mx-auto flex items-center justify-between">
 		<!-- Logo -->
 		<a href="/" class="text-xl font-bold">
-		  <img src="/images/logo-limmat.svg" alt="Limmat Logo" class="h-8">
+		  <img src="/images/logos/logo-limmat.svg" alt="Limmat Logo" class="h-8">
 		</a>
   
 		<!-- Desktop Navigation Links -->
 		<div class="hidden md:flex space-x-6">
 		  <a href="/" class="text-base text-white hover:text-limmat uppercase">Inicio</a>
-		  <a href="/blog" class="text-base text-white hover:text-limmat uppercase">Soluciones</a>
-		  <a href="/publicaciones" class="text-base text-white hover:text-limmat uppercase">Publicaciones</a>
+		  <a href="/soluciones" class="text-base text-white hover:text-limmat uppercase">Soluciones</a>
+		  <a href="/blog" class="text-base text-white hover:text-limmat uppercase">Publicaciones</a>
 		  <a href="/about" class="text-base text-white hover:text-limmat uppercase">Sobre nosotros</a>
 		  <a href="/contacto" class="text-base text-white hover:text-limmat uppercase">Contacto</a>
 		</div>

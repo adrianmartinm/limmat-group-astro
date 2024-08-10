@@ -1,0 +1,20 @@
+---
+// src/components/Solutions/CardSolution.astro
+const { image, title, icon, href = "/" } = Astro.props;
+---
+<a href={href} class="relative block h-[22rem] w-full max-w-[28rem] flex-col items-center justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700 transition-all duration-300 hover:bg-gray-800">
+  <div class="absolute inset-0 m-0 h-full w-full overflow-hidden bg-cover bg-center text-gray-700 shadow-none"
+    style={`background-image:url('${image}')`}
+  >
+    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/50"></div>
+  </div>
+  
+  <div class="relative flex flex-col items-center justify-center h-full">
+    {icon && (
+      <img src={icon} alt={`${title} icon`} class="w-24 h-24 mb-4"/>
+    )}
+    <h2 class="font-sans text-2xl font-medium leading-[1.5] tracking-normal text-white antialiased uppercase">
+      {title}
+    </h2>
+  </div>
+</a>

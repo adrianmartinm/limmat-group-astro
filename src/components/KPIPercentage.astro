@@ -1,0 +1,12 @@
+---
+const { percentage = 0, label = "" } = Astro.props;
+---
+
+<div class="flex flex-col items-center justify-center px-6 py-0 bg-neutral-800 shadow-lg rounded-lg border border-limmat min-h-[150px]">
+  <div class="text-6xl font-bold text-limmat">
+    {percentage}%
+  </div>
+  <p class="text-xl text-gray-400 text-center my-2">
+    {label}
+  </p>
+</div>

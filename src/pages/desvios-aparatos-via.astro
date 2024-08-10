@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro"
+import HeroVideo from "../components/HeroVideo.astro"
+import Section from "../components/Section.astro"
+import DesviosAparatosViasKPIs from '../components/DesviosAparatosViasKPIs.astro'
+import DesviosAparatosViasSolutions from '../components/DesviosAparatosViasSolutions.astro'
+import Separator from "../components/Separator.astro"
+---
+<Layout>
+	<HeroVideo title="Desvíos y aparatos de vía" videoFileName="desvios-aparatos-via.mp4" logo="/images/logos/logo-imas.png" />
+	<main class="w-100 md:w-[75vw]">
+		<Section>
+			<DesviosAparatosViasKPIs />
+		</Section>
+
+		<Separator />
+
+		<Section>
+			<DesviosAparatosViasSolutions />
+		</Section>
+	</main>
+</Layout>

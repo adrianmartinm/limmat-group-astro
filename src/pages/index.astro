@@ -1,21 +1,20 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import HeroVideo from '../components/HeroVideo.astro';
-import Home from '../components/Home.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from "../layouts/Layout.astro"
+import HeroVideo from "../components/HeroVideo.astro"
+import SolutionsCards from "../components/Home/SolutionsCards.astro"
+import SolutionsSection from "../components/Home/SolutionsSection.astro"
+import Section from "../components/Section.astro"
+import Separator from "../components/Separator.astro"
 ---
-
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body class="bg-neutral-950">
-		<Header />
-		<HeroVideo />
-		<Home />
-		<Footer />
-	</body>
-</html>
+<Layout>
+	<HeroVideo title="The railway digitalization that move us" videoFileName="home.mp4" />
+	<main class="w-100 md:w-[75vw]">
+		<Section>
+			<SolutionsSection />
+		</Section>
+		<Separator></Separator>
+		<Section>
+			<SolutionsCards />
+		</Section>
+	</main>
+</Layout>
