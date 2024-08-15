@@ -1,20 +1,47 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import HeroVideo from "../components/HeroVideo.astro"
-import SolutionsCards from "../components/Home/SolutionsCards.astro"
-import SolutionsSection from "../components/Home/SolutionsSection.astro"
-import Section from "../components/Section.astro"
-import Separator from "../components/Separator.astro"
+import Layout from "../layouts/Layout.astro";
+import HeroVideo from "../components/HeroVideo.astro";
+import SolutionsCards from "../components/Home/SolutionsCards.astro";
+import SolutionsSection from "../components/Home/SolutionsSection.astro";
+import Section from "../components/Section.astro";
+import Separator from "../components/Separator.astro";
+import Clients from "../components/Home/Clients.astro";
 ---
+
 <Layout>
-	<HeroVideo title="The railway digitalization that move us" videoFileName="home.mp4" />
-	<main class="w-100 md:w-[75vw]">
+	<!-- Home Hero Component -->
+	<HeroVideo
+		title="The railway digitalization that move us"
+		videoFileName="home.mp4"
+	/>
+	<main class="w-full md:w-[75vw]">
 		<Section>
 			<SolutionsSection />
 		</Section>
-		<Separator></Separator>
+		<Separator />
 		<Section>
 			<SolutionsCards />
 		</Section>
+		<Separator />
+
+		<!-- TODO: QUE OCUPE TODO EL ANCHO -->
+		<!-- <section
+			class="bg-neutral-900 w-screen relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw]"
+		>
+			<img
+				src="/images/home/home-banner.webp"
+				class="w-screen h-2/6 object-cover"
+				alt="Home Banner"
+				style="height: 300px;"
+			/>
+		</section> -->
+
+		<Separator />
+		<Section>
+			<Clients />
+		</Section>
 	</main>
 </Layout>
+
+<!-- Script de inicialización del carrusel -->
+<script src="../scripts/carousel-init.js"></script>

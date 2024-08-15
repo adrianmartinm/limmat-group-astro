@@ -1,16 +1,21 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 
-const { contactDetails } = Astro.props;
+interface ContactDetail {
+  icon: string;
+  text: string;
+}
+
+const { contactDetails } = Astro.props as { contactDetails?: ContactDetail[] };
 ---
 
 <div>
-  {contactDetails.map((item) => (
-    <p class="text-base my-1 flex items-start">
-      <Icon name={item.icon} class="mr-3 text-xl" />
-      <span class="whitespace-pre-line">
-        {item.text}
-      </span>
-    </p>
-  ))}
+  {
+    contactDetails?.map((item: ContactDetail) => (
+      <p class="flex items-start text-base my-1">
+        <Icon name={item.icon} class="mr-3 text-xl" />
+        <span class="whitespace-pre-line">{item.text}</span>
+      </p>
+    ))
+  }
 </div>

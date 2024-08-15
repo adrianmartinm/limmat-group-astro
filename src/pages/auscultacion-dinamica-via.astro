@@ -1,162 +1,306 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import HeroVideo from "../components/HeroVideo.astro"
-import Section from "../components/Section.astro"
-import Separator from "../components/Separator.astro"
-import KPI from "../components/KPI.astro"
-import { Icon } from 'astro-icon/components';
+import Layout from "../layouts/Layout.astro";
+import HeroVideo from "../components/HeroVideo.astro";
+import Section from "../components/Section.astro";
+import Separator from "../components/Separator.astro";
+import KPI from "../components/KPI.astro";
+import { Icon } from "astro-icon/components";
 ---
+
 <Layout>
-	<HeroVideo title="Auscultación dinámica de vía y confort" videoFileName="auscultacion-dinamica-via.mp4" logo="/images/logos/logo-imas.png" />
-	<main class="w-100 md:w-[75vw]">
-		<Section>
-            <div class="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
-                       
-                <div class="flex flex-col items-center mt-6 xl:items-start xl:w-1/2 xl:mt-0">
-                    <h2 class="text-xl font-semibold md:text-4xl text-limmat block uppercase">
+    <HeroVideo
+        title="Auscultación dinámica de vía y confort"
+        videoFileName="auscultacion-dinamica-via.mp4"
+        logo="/images/logos/logo-imas.webp"
+    />
+    <main class="w-100 md:w-[75vw]">
+        <Section>
+            <div
+                class="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row"
+            >
+                <div
+                    class="flex flex-col items-center mt-6 xl:items-start xl:w-1/2 xl:mt-0"
+                >
+                    <h2
+                        class="text-xl font-semibold md:text-4xl text-limmat block uppercase"
+                    >
                         La monitorización continua de vía con trenes comerciales
                     </h2>
-        
+
                     <p class="block max-w-2xl mt-4 text-neutral-300">
-                        Los vehículos son capaces de recolectar y proporcionar una información precisa sobre el estado en el que se encuentra la vía, lo cual es de gran valor para los gestores de infraestructura y los mantenedores. Algunas ventajas para estos son:
-                    </p>                           
+                        Los vehículos son capaces de recolectar y proporcionar
+                        una información precisa sobre el estado en el que se
+                        encuentra la vía, lo cual es de gran valor para los
+                        gestores de infraestructura y los mantenedores. Algunas
+                        ventajas para estos son:
+                    </p>
                 </div>
 
                 <div class="flex justify-center xl:w-1/2">
-                    <img 
+                    <img
                         class="h-80 w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover"
-                        src="/images/auscultacion-dinamica-via/monitorizacion-vias.png" 
+                        src="/images/auscultacion-dinamica-via/monitorizacion-vias.webp"
                         alt=""
-                    >
+                    />
                 </div>
             </div>
-		</Section>
-
-		<Separator />
-
-        <Section>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 py-12">
-                    <div class="w-full px-8 py-4 rounded-lg shadow-lg bg-neutral-800">
-                        <div class="flex justify-center md:justify-end">
-                            <div class="flex justify-center items-center w-20 h-20 border-2 border-limmat rounded-full">
-                                <Icon name="mdi:lock" class="block text-5xl text-limmat"></Icon>
-                            </div> 
-                        </div>            
-                        <h2 class="mt-2 text-2xl font-semibold dark:text-white">Mejora de la seguridad y la disponibilidad</h2>            
-                        <p class="mt-2 text-base text-neutral-200 text-justify">
-                            El personal de mantenimiento recibe notificaciones en caso de que algún tipo de defecto sea detectado con lo que puede programar las correspondientes intervenciones correctivas de mantenimiento antes de que se produzca un fallo severo tanto en la vía como en los vehículos.
-                        </p>
-                    </div>     
-
-                    <div class="w-full px-8 py-4 rounded-lg shadow-lg bg-neutral-800">
-                        <div class="flex justify-center md:justify-end">
-                            <div class="flex justify-center items-center w-20 h-20 border-2 border-limmat rounded-full">
-                                <Icon name="mdi:auto-fix" class="block text-5xl text-limmat"></Icon>
-                            </div> 
-                        </div>            
-                        <h2 class="mt-2 text-2xl font-semibold dark:text-white">Previsión del desarrollo de defectos en vía</h2>            
-                        <p class="mt-2 text-base text-neutral-200 text-justify">
-                            El sistema proporciona una previsión de la evolución de los defectos en vía y del confort en los vehículos y sugiere una planificación de acciones correctoras.
-                        </p>
-                    </div>     
-
-                    <div class="w-full px-8 py-4 rounded-lg shadow-lg bg-neutral-800">
-                        <div class="flex justify-center md:justify-end">
-                            <div class="flex justify-center items-center w-20 h-20 border-2 border-limmat rounded-full">
-                                <Icon name="mdi:credit-card" class="block text-5xl text-limmat"></Icon>
-                            </div> 
-                        </div>            
-                        <h2 class="mt-2 text-2xl font-semibold dark:text-white">Mejora los costes y la gestión del mantenimiento</h2>            
-                        <p class="mt-2 text-base text-neutral-200 text-justify">
-                            Los gestores del mantenimiento disponen de un SIG y un panel de control desde donde pueden visualizar el estado de la infraestructura y de los vehículos en tiempo cuasi real con lo que poder realizar una asignación de recursos basada en datos medibles y objetivos.
-                        </p>
-                    </div>   
-
-                    <div class="w-full px-8 py-4 rounded-lg shadow-lg bg-neutral-800">
-                        <div class="flex justify-center md:justify-end">
-                            <div class="flex justify-center items-center w-20 h-20 border-2 border-limmat rounded-full">
-                                <Icon name="mdi:tools" class="block text-5xl text-limmat"></Icon>
-                            </div> 
-                        </div>
-                        <h2 class="mt-2 text-2xl font-semibold dark:text-white">Verificación de la calidad de trabajos de reparación</h2>            
-                        <p class="mt-2 text-base text-neutral-200 text-justify">
-                            El sistema detecta y muestra el estado y la evolución de las intervenciones de reparación en vía, así como las intervenciones de mantenimiento en los vehículos que afecten al confort gracias a lo cual es posible evaluar la calidad de los trabajos realizados.
-                        </p>
-                    </div>   
-
-                </div>
         </Section>
 
         <Separator />
 
         <Section>
-            <h2 class="text-3xl font-semibold text-limmat block text-center uppercase">Mas del 30% de las incidencias que se producen están relacionadas con fallos mecánicos del carril y problemas de geometría de vía</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 py-12">
+                <div
+                    class="w-full px-8 py-4 rounded-lg shadow-lg bg-neutral-800"
+                >
+                    <div class="flex justify-center md:justify-end">
+                        <div
+                            class="flex justify-center items-center w-20 h-20 border-2 border-limmat rounded-full"
+                        >
+                            <Icon
+                                name="mdi:lock"
+                                class="block text-5xl text-limmat"
+                            />
+                        </div>
+                    </div>
+                    <h2 class="mt-2 text-2xl font-semibold dark:text-white">
+                        Mejora de la seguridad y la disponibilidad
+                    </h2>
+                    <p class="mt-2 text-base text-neutral-200 text-justify">
+                        El personal de mantenimiento recibe notificaciones en
+                        caso de que algún tipo de defecto sea detectado con lo
+                        que puede programar las correspondientes intervenciones
+                        correctivas de mantenimiento antes de que se produzca un
+                        fallo severo tanto en la vía como en los vehículos.
+                    </p>
+                </div>
+
+                <div
+                    class="w-full px-8 py-4 rounded-lg shadow-lg bg-neutral-800"
+                >
+                    <div class="flex justify-center md:justify-end">
+                        <div
+                            class="flex justify-center items-center w-20 h-20 border-2 border-limmat rounded-full"
+                        >
+                            <Icon
+                                name="mdi:auto-fix"
+                                class="block text-5xl text-limmat"
+                            />
+                        </div>
+                    </div>
+                    <h2 class="mt-2 text-2xl font-semibold dark:text-white">
+                        Previsión del desarrollo de defectos en vía
+                    </h2>
+                    <p class="mt-2 text-base text-neutral-200 text-justify">
+                        El sistema proporciona una previsión de la evolución de
+                        los defectos en vía y del confort en los vehículos y
+                        sugiere una planificación de acciones correctoras.
+                    </p>
+                </div>
+
+                <div
+                    class="w-full px-8 py-4 rounded-lg shadow-lg bg-neutral-800"
+                >
+                    <div class="flex justify-center md:justify-end">
+                        <div
+                            class="flex justify-center items-center w-20 h-20 border-2 border-limmat rounded-full"
+                        >
+                            <Icon
+                                name="mdi:credit-card"
+                                class="block text-5xl text-limmat"
+                            />
+                        </div>
+                    </div>
+                    <h2 class="mt-2 text-2xl font-semibold dark:text-white">
+                        Mejora los costes y la gestión del mantenimiento
+                    </h2>
+                    <p class="mt-2 text-base text-neutral-200 text-justify">
+                        Los gestores del mantenimiento disponen de un SIG y un
+                        panel de control desde donde pueden visualizar el estado
+                        de la infraestructura y de los vehículos en tiempo cuasi
+                        real con lo que poder realizar una asignación de
+                        recursos basada en datos medibles y objetivos.
+                    </p>
+                </div>
+
+                <div
+                    class="w-full px-8 py-4 rounded-lg shadow-lg bg-neutral-800"
+                >
+                    <div class="flex justify-center md:justify-end">
+                        <div
+                            class="flex justify-center items-center w-20 h-20 border-2 border-limmat rounded-full"
+                        >
+                            <Icon
+                                name="mdi:tools"
+                                class="block text-5xl text-limmat"
+                            />
+                        </div>
+                    </div>
+                    <h2 class="mt-2 text-2xl font-semibold dark:text-white">
+                        Verificación de la calidad de trabajos de reparación
+                    </h2>
+                    <p class="mt-2 text-base text-neutral-200 text-justify">
+                        El sistema detecta y muestra el estado y la evolución de
+                        las intervenciones de reparación en vía, así como las
+                        intervenciones de mantenimiento en los vehículos que
+                        afecten al confort gracias a lo cual es posible evaluar
+                        la calidad de los trabajos realizados.
+                    </p>
+                </div>
+            </div>
+        </Section>
+
+        <Separator />
+
+        <Section>
+            <h2
+                class="text-3xl font-semibold text-limmat block text-center uppercase"
+            >
+                Mas del 30% de las incidencias que se producen están
+                relacionadas con fallos mecánicos del carril y problemas de
+                geometría de vía
+            </h2>
 
             <p class="mx-48 mt-12 text-neutral-300 mx-auto">
-                El sistema RT3-IMAS+ no es únicamente aplicable para gestores de infraestructura, si no que es capaz de apartar incluso más valor a operadores y propietarios de vehículos ferroviarios en donde la competitividad y la eficiencia cada día son más importantes.
-            </p>   
-            
+                El sistema RT3-IMAS+ no es únicamente aplicable para gestores de
+                infraestructura, si no que es capaz de apartar incluso más valor
+                a operadores y propietarios de vehículos ferroviarios en donde
+                la competitividad y la eficiencia cada día son más importantes.
+            </p>
+
             <div class="grid grid-cols-3 gap-6 px-4 py-12">
                 <!-- Primer fila -->
-                <div class="w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 pt-5">
-                    <Icon name="mdi:train" class="block text-limmat w-full h-16"></Icon>
-                    <p class="text-center text-lg font-bold text-white pt-3 px-5">Monitorización continua del confort del vehículo</p>
+                <div
+                    class="w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 pt-5"
+                >
+                    <Icon
+                        name="mdi:train"
+                        class="block text-limmat w-full h-16"
+                    />
+                    <p
+                        class="text-center text-lg font-bold text-white pt-3 px-5"
+                    >
+                        Monitorización continua del confort del vehículo
+                    </p>
                 </div>
-                <div class="w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 pt-5">
-                    <Icon name="mdi:handshake" class="block text-limmat w-full h-16"></Icon>
-                    <p class="text-center text-lg font-bold text-white pt-3 px-5">Facilita la negociación al disponer de datos objetivos</p>
+                <div
+                    class="w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 pt-5"
+                >
+                    <Icon
+                        name="mdi:handshake"
+                        class="block text-limmat w-full h-16"
+                    />
+                    <p
+                        class="text-center text-lg font-bold text-white pt-3 px-5"
+                    >
+                        Facilita la negociación al disponer de datos objetivos
+                    </p>
                 </div>
-                <div class="w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 pt-5">
-                    <Icon name="mdi:briefcase" class="block text-limmat w-full h-16"></Icon>
-                    <p class="text-center text-lg font-bold text-white pt-3 px-5">Nuevos servicios y fuentes de ingreso</p>
+                <div
+                    class="w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 pt-5"
+                >
+                    <Icon
+                        name="mdi:briefcase"
+                        class="block text-limmat w-full h-16"
+                    />
+                    <p
+                        class="text-center text-lg font-bold text-white pt-3 px-5"
+                    >
+                        Nuevos servicios y fuentes de ingreso
+                    </p>
                 </div>
-              
+
                 <!-- Segunda fila -->
-                <div class="w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 pt-5">
-                    <Icon name="mdi:shield" class="block text-limmat w-full h-16"></Icon>
-                    <p class="text-center text-lg font-bold text-white pt-3 px-5">Mejora la seguridad y evita descarrilamientos</p>
+                <div
+                    class="w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 pt-5"
+                >
+                    <Icon
+                        name="mdi:shield"
+                        class="block text-limmat w-full h-16"
+                    />
+                    <p
+                        class="text-center text-lg font-bold text-white pt-3 px-5"
+                    >
+                        Mejora la seguridad y evita descarrilamientos
+                    </p>
                 </div>
-                <div class="w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 pt-5">
-                    <Icon name="mdi:lock" class="block text-limmat w-full h-16"></Icon>
-                    <p class="text-center text-lg font-bold text-white pt-3 px-5">Solución competitiva</p>
+                <div
+                    class="w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 pt-5"
+                >
+                    <Icon
+                        name="mdi:lock"
+                        class="block text-limmat w-full h-16"
+                    />
+                    <p
+                        class="text-center text-lg font-bold text-white pt-3 px-5"
+                    >
+                        Solución competitiva
+                    </p>
                 </div>
-                <div class="w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 pt-5">
-                    <Icon name="mdi:auto-fix" class="block text-limmat w-full h-16"></Icon>
-                    <p class="text-center text-lg font-bold text-white pt-3 px-5">Ayuda de procesos de liberación</p>
+                <div
+                    class="w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 pt-5"
+                >
+                    <Icon
+                        name="mdi:auto-fix"
+                        class="block text-limmat w-full h-16"
+                    />
+                    <p
+                        class="text-center text-lg font-bold text-white pt-3 px-5"
+                    >
+                        Ayuda de procesos de liberación
+                    </p>
                 </div>
 
                 <!-- Décimo elemento (col-span-3 para centrado) -->
-                <div class="w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 pt-5 col-start-2 col-span-1">
-                    <Icon name="mdi:wheel" class="block text-limmat w-full h-16"></Icon>
-                    <p class="text-center text-lg font-bold text-white pt-3 px-5">Detecta planos en rueda</p>
+                <div
+                    class="w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 pt-5 col-start-2 col-span-1"
+                >
+                    <Icon
+                        name="mdi:wheel"
+                        class="block text-limmat w-full h-16"
+                    />
+                    <p
+                        class="text-center text-lg font-bold text-white pt-3 px-5"
+                    >
+                        Detecta planos en rueda
+                    </p>
                 </div>
             </div>
-              
+        </Section>
+    </main>
+
+    <Separator />
+
+    <Section>
+        <h2
+            class="text-3xl font-semibold text-limmat block text-center uppercase"
+        >
+            El sistema de auscultación dinámica realiza una completa captación
+            de datos y posterior análisis con un doble objetivo
+        </h2>
+
+        <!-- Componente KPI con Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+            <!-- Columna de la izquierda: Imagen -->
+            <div class="flex justify-center">
+                <img
+                    src="/images/auscultacion-dinamica-via/auscultaciones-dinamicas-via.webp"
+                    alt="Descripción de la imagen"
+                    class="w-75 h-auto object-cover rounded-lg shadow-lg"
+                />
             </div>
-          </Section>
 
-          <Separator />
-
-          <Section>
-            <h2 class="text-3xl font-semibold text-limmat block text-center uppercase">
-                El sistema de auscultación dinámica realiza una completa captación de datos y posterior análisis con un doble objetivo
-            </h2>
-
-            <!-- Componente KPI con Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
-                <!-- Columna de la izquierda: Imagen -->
-                <div class="flex justify-center">
-                  <img src="/images/auscultacion-dinamica-via/auscultaciones-dinamicas-via.png" alt="Descripción de la imagen" class="w-75 h-auto object-cover rounded-lg shadow-lg" />
-                </div>
-              
-                <!-- Columna de la derecha: KPIs -->
-                <div class="flex flex-col justify-between">
-                  <KPI title={"01"} label="Conseguir una total información para la mejora de la explotación de trenes y locomotoras en criterios de seguridad y económicos cumpliendo con la normativa UNE-EN 12299- Comodidad de viaje para los pasajeros." />
-                  <KPI title={"02"} label="Realizar una auscultación en los elementos de rodadura para establecer el análisis diferencial en función del estado de la vía, según norma UNE-EN 14363- Ensayos y simulaciones para la aceptación de las características dinámicas de los vehículos ferroviarios." /> 
-                </div>
-              </div>
-              
-          </Section>
-                    
-	</main>
+            <!-- Columna de la derecha: KPIs -->
+            <div class="flex flex-col justify-between">
+                <KPI
+                    title={"01"}
+                    label="Conseguir una total información para la mejora de la explotación de trenes y locomotoras en criterios de seguridad y económicos cumpliendo con la normativa UNE-EN 12299- Comodidad de viaje para los pasajeros."
+                />
+                <KPI
+                    title={"02"}
+                    label="Realizar una auscultación en los elementos de rodadura para establecer el análisis diferencial en función del estado de la vía, según norma UNE-EN 14363- Ensayos y simulaciones para la aceptación de las características dinámicas de los vehículos ferroviarios."
+                />
+            </div>
+        </div>
+    </Section>
 </Layout>

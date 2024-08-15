@@ -1,73 +1,32 @@
 ---
-import ContactInfo from "./ContactInfo.astro";
-import { Icon } from 'astro-icon/components'
-
-const socialLinks = [
-  { href: "https://facebook.com", icon: "mdi:facebook" },
-  { href: "https://twitter.com", icon: "mdi:twitter" },
-  { href: "https://linkedin.com", icon: "mdi:linkedin" },
-  { href: "https://instagram.com", icon: "mdi:instagram" },
-];
-
-const navLinks = [
-  { href: "/about", label: "Política de privacidad " },
-  { href: "/about", label: "Términos legales " },
-  { href: "/about", label: "Política de cookies" },
-];
-
-const contactDetails = [
-  {
-    icon: "mdi:map-marker",
-    text: "Edificio Zafiro, Calle Gremios Segovianos, 3\nPolígono de Hontoria 40195 Segovia",
-  },
-  {
-    icon: "mdi:phone",
-    text: "(+34) 644121775",
-  },
-  {
-    icon: "mdi:email",
-    text: "info@limmat-group.com",
-  },
-];
+import FooterLogo from "./Footer/FooterLogo.astro";
+import FooterSocialLinks from "./Footer/FooterSocialLinks.astro";
+import FooterNavLinks from "./Footer/FooterNavLinks.astro";
+import FooterContactInfo from "./Footer/FooterContactInfo.astro";
+import FooterCopyright from "./Footer/FooterCopyright.astro";
 ---
 
-<footer class="bg-black text-white py-6">
-  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-    <!-- Logo -->
-    <a href="/" class="flex items-center">
-		<img src="/images/logos/logo-limmat.svg" alt="Limmat Logo" class="h-auto w-72 mr-4">
-	</a>
+<footer class="bg-black w-full py-3 lg:py-6">
+    <div
+        class="flex flex-col justify-between lg:flex-row px-6 lg:px-12 2xl:px-24 lg:gap-4"
+    >
+        <div class="flex flex-1 items-center justify-center mb-2">
+            <!-- Logo Limmat -->
+            <FooterLogo />
+        </div>
+        <div class="flex flex-1 items-center justify-center">
+            <!-- Contact Info -->
+            <FooterContactInfo />
+        </div>
+        <div class="flex-1 py-2">
+            <!-- Social Links -->
+            <FooterSocialLinks />
 
-    <!-- Información de Contacto -->
-    <div class="text-center md:text-left">
-      <p class="text-2xl uppercase text-limmat mb-4">Contacto</p>
-      <ContactInfo contactDetails={contactDetails} />
+            <!-- Nav Links -->
+            <FooterNavLinks />
+
+            <!-- Copyright -->
+            <FooterCopyright />
+        </div>
     </div>
-
-    <!-- Enlaces de Navegación -->
-    <div class="text-center">
-      <ul class="flex flex-wrap justify-center gap-3 text-base">
-        {navLinks.map((link) => (
-          <li>
-            <a href={link.href} class="text-limmat hover:text-white transition-colors">
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-
-	      <!-- Iconos de Redes Sociales -->
-		  <div class="flex justify-center gap-4 mt-8">
-			{socialLinks.map((social) => (
-			  <a href={social.href} target="_blank" class="text-3xl hover:text-limmat transition-colors text-white">
-				<Icon name={social.icon} />
-			  </a>
-			))}
-		  </div>
-
-		  <div class="mt-6 text-center text-sm text-gray-300">
-			&copy; {new Date().getFullYear()} Limmat M&M, S.L. Todos los derechos reservados.
-		  </div>
-    </div>
-  </div>
 </footer>

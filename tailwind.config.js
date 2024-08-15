@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
   content: [
     './src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}', // Asegúrate de incluir los archivos de tu proyecto
   ],
@@ -12,3 +12,5 @@ module.exports = {
   },
   plugins: [],
 };
+
+export default config;

@@ -1,39 +1,42 @@
 ---
-const images = [
-  '/images/smart-solutions-1.png',
-  '/images/smart-solutions-2.png',
-  '/images/smart-solutions-3.png',
-];
+interface Image {
+    src: string;
+    alt: string;
+}
+
+const {
+    id,
+    images,
+    imageClass = "w-full h-auto object-cover",
+    visibleImages = 1,
+} = Astro.props as {
+    id: string;
+    images: Image[];
+    imageClass?: string;
+    visibleImages?: number;
+};
 ---
 
 <div class="relative w-full overflow-hidden">
-  <div class="flex h-[35vh] md:h-[40vh]" id="carousel">
-    {images.map((src) => (
-      <img src={src} alt="Carousel Image" class="w-full flex-shrink-0" />
-    ))}
-  </div>
+    <div
+        id={id}
+        data-carousel-id={id}
+        data-visible-images={visibleImages}
+        class="flex items-center"
+    >
+        {
+            images.concat(images).map((image: Image) => (
+                <div
+                    class="flex-shrink-0"
+                    style={`width: calc(100% / ${visibleImages});`}
+                >
+                    <img
+                        src={image.src}
+                        alt={image.alt}
+                        class:list={[imageClass, "block mx-auto"]}
+                    />
+                </div>
+            ))
+        }
+    </div>
 </div>
-
-<script type="module">
-  document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('#carousel img');
-    let currentIndex = 0;
-    const intervalTime = 2500; // Intervalo en milisegundos
-
-    function showSlide(index) {
-      if (index >= slides.length) currentIndex = 0;
-      if (index < 0) currentIndex = slides.length - 1;
-      slides.forEach((slide, i) => {
-        slide.style.transform = `translateX(-${currentIndex * 100}%)`;
-      });
-    }
-
-    function nextSlide() {
-      currentIndex++;
-      showSlide(currentIndex);
-    }
-
-    showSlide(currentIndex); // Mostrar la primera diapositiva
-    setInterval(nextSlide, intervalTime); // Cambiar diapositiva automáticamente
-  });
-</script>

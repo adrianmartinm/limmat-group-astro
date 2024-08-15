@@ -1,0 +1,25 @@
+---
+// src\components\Footer\FooterSocialLinks.astro
+import { Icon } from "astro-icon/components";
+
+const socialLinks = [
+    { href: "https://facebook.com", icon: "mdi:facebook" },
+    { href: "https://twitter.com", icon: "mdi:twitter" },
+    { href: "https://linkedin.com", icon: "mdi:linkedin" },
+    { href: "https://instagram.com", icon: "mdi:instagram" },
+];
+---
+
+<div class="mt-[18px] flex items-center justify-center gap-4 w-full">
+    {
+        socialLinks.map((social) => (
+            <a
+                class="text-3xl hover:text-limmat transition-colors text-white hover:scale-125"
+                target="_blank"
+                href={social.href}
+            >
+                <Icon name={social.icon} />
+            </a>
+        ))
+    }
+</div>

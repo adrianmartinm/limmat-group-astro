@@ -1,0 +1,40 @@
+---
+// src\components\Footer\FooterContactInfo.astro
+import { Icon } from "astro-icon/components";
+import { SITE_CONTACT_MAP_URL } from "../../consts";
+
+const contactDetails = [
+    {
+        icon: "mdi:email",
+        href: "mailto:info@limmat-group.com",
+        text: "info@limmat-group.com",
+    },
+    {
+        icon: "mdi:phone",
+        href: "tel:644121775",
+        text: "644121775",
+    },
+    {
+        icon: "mdi:map-marker",
+        href: SITE_CONTACT_MAP_URL,
+        text: "Edificio Zafiro, Calle Gremios Segovianos, 3\nPolígono de Hontoria 40195 Segovia",
+    },
+];
+---
+
+<div>
+    {
+        contactDetails?.map((item) => (
+            <div class="flex items-start text-base my-2">
+                <Icon name={item.icon} class="text-white text-xl" />
+                <a
+                    class="whitespace-pre-line text-white hover:text-limmat transition-colors ms-3"
+                    href={item.href}
+                    target="_blank"
+                >
+                    {item.text}
+                </a>
+            </div>
+        ))
+    }
+</div>

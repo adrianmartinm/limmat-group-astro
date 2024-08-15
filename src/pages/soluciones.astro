@@ -1,20 +1,21 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import HeroVideo from "../components/HeroVideo.astro"
-import Section from "../components/Section.astro"
-import MainSolutions from "../components/MainSolutions.astro"
-import Separator from "../components/Separator.astro"
-import Colaboration from "../components/Solutions/Colaboration.astro"
+import Layout from "../layouts/Layout.astro";
+import HeroVideo from "../components/HeroVideo.astro";
+import Section from "../components/Section.astro";
+import MainSolutions from "../components/MainSolutions.astro";
+import Separator from "../components/Separator.astro";
+import Colaboration from "../components/Solutions/Colaboration.astro";
 ---
+
 <Layout>
 	<HeroVideo title="Soluciones" videoFileName="soluciones.mp4" />
 	<main class="w-100 md:w-[75vw]">
 		<Section>
 			<MainSolutions />
 		</Section>
-        <Separator></Separator>
-        <Section>
-            <Colaboration />
-        </Section>
+		<Separator />
+		<Section>
+			<Colaboration />
+		</Section>
 	</main>
 </Layout>
