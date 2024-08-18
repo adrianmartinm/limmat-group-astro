@@ -1,44 +1,50 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroVideo from "../components/HeroVideo.astro";
-import SolutionsCards from "../components/Home/SolutionsCards.astro";
-import SolutionsSection from "../components/Home/SolutionsSection.astro";
-import Section from "../components/Section.astro";
-import Separator from "../components/Separator.astro";
-import Clients from "../components/Home/Clients.astro";
+import HeroVideo from "../components/Layout/HeroVideo.astro";
+import SolutionsCards from "../components/Home/HomeCompetencies.astro";
+import SolutionsSection from "../components/Home/HomeSolutions.astro";
+import Section from "../components/Layout/Section.astro";
+import Separator from "../components/Layout/Separator.astro";
+import Clients from "../components/Home/HomeClients.astro";
+import Associations from "../components/Home/HomeAssociations.astro";
 ---
 
 <Layout>
-	<!-- Home Hero Component -->
+	<!-- Hero Section -->
 	<HeroVideo
 		title="The railway digitalization that move us"
 		videoFileName="home.mp4"
 	/>
-	<main class="w-full md:w-[75vw]">
+
+	<!-- Main Content -->
+	<main class="w-full md:w-[75vw] mx-auto mt-16">
+		<!-- Section "Soluciones inteligentes para infraestructuras" -->
 		<Section>
 			<SolutionsSection />
 		</Section>
+
+		<!-- Section Separator -->
 		<Separator />
+
+		<!-- Section "Nuestras competencias" -->
 		<Section>
 			<SolutionsCards />
 		</Section>
+
+		<!-- Section Separator -->
 		<Separator />
 
-		<!-- TODO: QUE OCUPE TODO EL ANCHO -->
-		<!-- <section
-			class="bg-neutral-900 w-screen relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw]"
-		>
-			<img
-				src="/images/home/home-banner.webp"
-				class="w-screen h-2/6 object-cover"
-				alt="Home Banner"
-				style="height: 300px;"
-			/>
-		</section> -->
-
-		<Separator />
+		<!-- Section "Algunos de nuestros clientes" -->
 		<Section>
 			<Clients />
+		</Section>
+
+		<!-- Section Separator -->
+		<Separator />
+
+		<!-- Section "Asociaciones y Grupos de trabajo" -->
+		<Section>
+			<Associations />
 		</Section>
 	</main>
 </Layout>

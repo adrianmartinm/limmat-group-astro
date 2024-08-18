@@ -1,0 +1,32 @@
+---
+// src/components/Home/Clients.astro
+import Carousel from "../Common/Carousel.astro";
+const images = [
+    { src: "/images/clientes/adif.webp", alt: "Adif logo" },
+    { src: "/images/clientes/renfe.webp", alt: "Renfe logo" },
+    { src: "/images/clientes/telefonica.webp", alt: "Telefonica logo" },
+    { src: "/images/clientes/caf.webp", alt: "CAF logo" },
+    { src: "/images/clientes/asch.webp", alt: "ASCH logo" },
+];
+---
+
+<section class="flex justify-center mx-auto lg:shadow-md lg:rounded-2xl my-5">
+    <div class="lg:mx-8 lg:max-w-6xl lg:w-full">
+        <h2
+            class="text-xl font-semibold md:text-5xl text-limmat block text-center uppercase"
+        >
+            Algunos de nuestros clientes
+        </h2>
+
+        <div
+            class="w-full p-4 border bg-white lg:shadow-md lg:rounded-2xl mt-8"
+        >
+            <Carousel
+                id="clients-carousel"
+                images={images}
+                imageClass="w-48 h-auto max-h-28 object-contain"
+                visibleImages={3}
+            />
+        </div>
+    </div>
+</section>

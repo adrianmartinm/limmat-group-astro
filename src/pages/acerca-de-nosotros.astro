@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroVideo from "../components/Layout/HeroVideo.astro";
+import Section from "../components/Layout/Section.astro";
+import Separator from "../components/Layout/Separator.astro";
+import AboutCompromisos from "../components/About/AboutCompromisos.astro";
+---
+
+<Layout>
+    <!-- Hero Section -->
+    <HeroVideo title="Sobre nostros" videoFileName="acerca-de-nosotros.mp4" />
+
+    <!-- Main Content -->
+    <main class="w-full md:w-[75vw] mx-auto mt-16">
+        <!-- Section "Compromisos" -->
+        <Section>
+            <AboutCompromisos />
+        </Section>
+
+        <Separator />
+    </main>
+</Layout>

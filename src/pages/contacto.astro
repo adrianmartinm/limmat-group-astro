@@ -1,15 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroVideo from "../components/HeroVideo.astro";
-import Contact from "../components/Contact.astro";
-import Section from "../components/Section.astro";
+import HeroVideo from "../components/Layout/HeroVideo.astro";
+import Contact from "../components/Contact/Contact.astro";
+import Section from "../components/Layout/Section.astro";
+import Separator from "../components/Layout/Separator.astro";
 ---
 
 <Layout>
-	<HeroVideo title="Contacta con nostros" videoFileName="webm.mp4" />
-	<main class="w-100 md:w-[75vw]">
+	<!-- Hero Section -->
+	<HeroVideo title="Contacta con nosotros" videoFileName="contact.mp4" />
+
+	<!-- Main Content -->
+	<main class="w-full md:w-[75vw] mx-auto mt-16">
+		<!-- Section "Contacto" -->
 		<Section>
 			<Contact />
 		</Section>
+
+		<Separator />
 	</main>
 </Layout>

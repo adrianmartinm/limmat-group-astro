@@ -1,0 +1,143 @@
+---
+
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-black text-white">
+	<nav class="px-6 py-4">
+		<div class="container-fluid flex items-center justify-between">
+			<!-- Logo -->
+			<a href="/" class="text-xl font-bold">
+				<img
+					src="/images/logos/logo-limmat.svg"
+					alt="Limmat Logo"
+					class="h-8"
+				/>
+			</a>
+
+			<!-- Desktop Navigation Links -->
+			<div class="hidden lg:flex space-x-6">
+				<a
+					href="/"
+					class="text-base text-white hover:text-limmat uppercase"
+					>Inicio</a
+				>
+				<a
+					href="/soluciones"
+					class="text-base text-white hover:text-limmat uppercase"
+					>Soluciones</a
+				>
+				<a
+					href="/blog"
+					class="text-base text-white hover:text-limmat uppercase"
+					>Publicaciones</a
+				>
+				<a
+					href="/acerca-de-nosotros"
+					class="text-base text-white hover:text-limmat uppercase"
+					>Sobre nosotros</a
+				>
+				<a
+					href="/contacto"
+					class="text-base text-white hover:text-limmat uppercase"
+					>Contacto</a
+				>
+			</div>
+
+			<!-- Hamburger Icon for Mobile -->
+			<button
+				id="menu-button"
+				class="md:hidden text-white focus:outline-none"
+			>
+				<svg
+					class="w-8 h-8"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M4 6h16M4 12h16m-7 6h7"></path>
+				</svg>
+			</button>
+		</div>
+	</nav>
+
+	<!-- Mobile Navigation Drawer -->
+	<div
+		id="menu-drawer"
+		class="fixed inset-0 bg-black bg-opacity-90 transform -translate-x-full transition-transform duration-300"
+	>
+		<div class="flex justify-end p-4">
+			<button id="close-button" class="text-white focus:outline-none">
+				<svg
+					class="w-8 h-8"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M6 18L18 6M6 6l12 12"></path>
+				</svg>
+			</button>
+		</div>
+
+		<!-- Logo -->
+		<div class="flex justify-center">
+			<a href="/" class="text-xl font-bold">
+				<img
+					src="/images/logos/logo-limmat.svg"
+					alt="Limmat Logo"
+					class="h-16"
+				/>
+			</a>
+		</div>
+
+		<div class="flex flex-col items-center space-y-6 mt-16">
+			<a href="/" class="text-xl text-white hover:text-limmat uppercase"
+				>Inicio</a
+			>
+			<a
+				href="/blog"
+				class="text-xl text-white hover:text-limmat uppercase"
+				>Soluciones</a
+			>
+			<a
+				href="/publicaciones"
+				class="text-xl text-white hover:text-limmat uppercase"
+				>Publicaciones</a
+			>
+			<a
+				href="/about"
+				class="text-xl text-white hover:text-limmat uppercase"
+				>Sobre nosotros</a
+			>
+			<a
+				href="/contacto"
+				class="text-xl text-white hover:text-limmat uppercase"
+				>Contacto</a
+			>
+		</div>
+	</div>
+</header>
+
+<!-- JavaScript para manejar el estado del menú -->
+<script is:inline>
+	const menuButton = document.getElementById("menu-button");
+	const closeButton = document.getElementById("close-button");
+	const menuDrawer = document.getElementById("menu-drawer");
+
+	menuButton.addEventListener("click", () => {
+		menuDrawer.classList.remove("-translate-x-full");
+	});
+
+	closeButton.addEventListener("click", () => {
+		menuDrawer.classList.add("-translate-x-full");
+	});
+</script>

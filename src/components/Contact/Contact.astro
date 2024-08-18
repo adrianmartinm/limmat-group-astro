@@ -1,0 +1,56 @@
+---
+import { Icon } from "astro-icon/components";
+import { SITE_GOOGLE_MAP_URL } from "../../consts";
+import ContactMap from "./ContactMap.astro";
+
+const ContactInfo = [
+  {
+    icon: "mdi:map-marker",
+    title: "Visítanos",
+    text: "Edificio Zafiro, Calle Gremios Segovianos, 3\nPolígono de Hontoria 40195 Segovia",
+  },
+  {
+    icon: "mdi:phone",
+    title: "Llámanos",
+    text: "+34 644121775",
+  },
+  {
+    icon: "mdi:email",
+    title: "Escríbenos",
+    text: "info@limmat-group.com",
+  },
+];
+---
+
+<!-- Section Title -->
+<h2
+  class="text-xl font-semibold md:text-5xl text-limmat block text-center uppercase"
+>
+  ¿Hablamos?
+</h2>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+  <!-- Columna Izquierda: Información de Contacto -->
+  <div class="flex flex-col justify-evenly min-h-80">
+    {
+      ContactInfo.map((info) => (
+        <div class="flex items-center space-x-8">
+          <div class="text-limmat">
+            <Icon name={info.icon} class="text-4xl" />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white">{info.title}</h3>
+            <p class="text-base text-gray-400 whitespace-pre-line">
+              {info.text}
+            </p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Columna Derecha: Mapa de Google -->
+  <div class="h-full w-full min-h-80">
+    <ContactMap mapUrl={SITE_GOOGLE_MAP_URL} />
+  </div>
+</div>

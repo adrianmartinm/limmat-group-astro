@@ -1,0 +1,111 @@
+---
+import BaseHead from "../../components/Layout/BaseHead.astro";
+import Header from "../../components/Layout/Header.astro";
+import HeroVideo from "../../components/Layout/HeroVideo.astro";
+import Footer from "../../components/Layout/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION, BLOG_PAGE_SIZE } from "../../consts";
+import { getCollection } from "astro:content";
+
+// Función getStaticPaths para generar rutas estáticas
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+    const totalPages = Math.ceil(posts.length / BLOG_PAGE_SIZE);
+
+    // Crear un array con todas las rutas (1, 2, 3, ..., totalPages)
+    return Array.from({ length: totalPages }, (_, i) => ({
+        params: { page: (i + 1).toString() }, // Las rutas son 1, 2, 3, etc.
+    }));
+}
+
+// Recoge la página actual del parámetro dinámico
+const { page } = Astro.params;
+const currentPage = Number(page) || 1;
+
+const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const totalPages = Math.ceil(posts.length / BLOG_PAGE_SIZE);
+const start = (currentPage - 1) * BLOG_PAGE_SIZE;
+const end = start + BLOG_PAGE_SIZE;
+const currentPosts = posts.slice(start, end);
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    </head>
+    <body class="bg-black">
+        <Header />
+        <!-- Hero Section -->
+        <HeroVideo title="Publicaciones" videoFileName="publicaciones.webm" />
+
+        <main class="w-full md:w-[75vw] mx-auto md:pt-16">
+            <section
+                id="blog-posts"
+                class="shadow-md bg-neutral-950 md:rounded-2xl md:p-5"
+            >
+                <div
+                    class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3"
+                >
+                    {
+                        currentPosts.map((post) => (
+                            <div>
+                                <div class="relative">
+                                    <img
+                                        class="object-cover object-center w-full h-64 rounded-lg lg:h-72"
+                                        src={post.data.postImage}
+                                        alt={post.data.title}
+                                    />
+                                </div>
+
+                                <h1 class="text-xl font-semibold text-neutral-200">
+                                    <a
+                                        href={`/blog/${post.slug}/`}
+                                        class="inline-block mt-4 underline text-neutral-300  hover:text-limmat"
+                                    >
+                                        {post.data.title}
+                                    </a>
+                                </h1>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Paginación -->
+            <div class="flex justify-center mt-8">
+                {
+                    Array.from({ length: totalPages }).map((_, index) => (
+                        <a
+                            href={`/blog/${index + 1}`}
+                            class={`mx-2 px-4 py-2 rounded-lg ${currentPage === index + 1 ? "bg-limmat text-white" : "bg-neutral-800 text-neutral-200 hover:bg-neutral-700"}`}
+                        >
+                            {index + 1}
+                        </a>
+                    ))
+                }
+            </div>
+        </main>
+        <Footer />
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Obtener el parámetro de la página desde las rutas dinámicas
+                const pageParam = window.location.pathname.split("/").pop();
+
+                // Convertir a número
+                const pageNumber = Number(pageParam);
+
+                // Si la página es una página específica de paginación, desplázate hasta el div#blog-posts
+                if (!isNaN(pageNumber)) {
+                    const mainElement = document.getElementById("blog-posts");
+                    if (mainElement) {
+                        mainElement.scrollIntoView({ behavior: "instant" });
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

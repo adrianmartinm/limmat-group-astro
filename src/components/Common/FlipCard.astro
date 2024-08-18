@@ -1,0 +1,22 @@
+---
+// src/components/Common/FlipCard.astro
+
+const { frontText, backText } = Astro.props;
+---
+
+<div class="w-72 h-48 perspective-1000">
+    <div
+        class="relative w-full h-full transition-transform duration-1000 transform-style-preserve-3d hover:rotate-y-180"
+    >
+        <div
+            class="absolute w-full h-full bg-purple-700 text-white flex items-center justify-center border-4 border-purple-700 rounded-lg text-xl backface-hidden"
+        >
+            <p>{frontText}</p>
+        </div>
+        <div
+            class="absolute w-full h-full bg-orange-400 text-white flex items-center justify-center border-4 border-orange-400 rounded-lg text-xl backface-hidden rotate-y-180"
+        >
+            <p>{backText}</p>
+        </div>
+    </div>
+</div>

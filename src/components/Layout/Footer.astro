@@ -1,0 +1,32 @@
+---
+import FooterLogo from "../Footer/FooterLogo.astro";
+import FooterSocialLinks from "../Footer/FooterSocialLinks.astro";
+import FooterNavLinks from "../Footer/FooterNavLinks.astro";
+import FooterContactInfo from "../Footer/FooterContactInfo.astro";
+import FooterCopyright from "../Footer/FooterCopyright.astro";
+---
+
+<footer class="bg-black w-full py-3 lg:py-6">
+    <div
+        class="flex flex-col justify-between lg:flex-row px-6 lg:px-12 2xl:px-24 lg:gap-4"
+    >
+        <div class="flex flex-1 items-center justify-center mb-2">
+            <!-- Logo Limmat -->
+            <FooterLogo />
+        </div>
+        <div class="flex flex-1 items-center justify-center">
+            <!-- Contact Info -->
+            <FooterContactInfo />
+        </div>
+        <div class="flex-1 py-2">
+            <!-- Social Links -->
+            <FooterSocialLinks />
+
+            <!-- Nav Links -->
+            <FooterNavLinks />
+
+            <!-- Copyright -->
+            <FooterCopyright />
+        </div>
+    </div>
+</footer>

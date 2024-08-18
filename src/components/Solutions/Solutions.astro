@@ -1,0 +1,24 @@
+---
+import CardSolution from "./SolutionsCard.astro";
+
+const solutions = [
+  { image: "/images/solutions/wheel-guard.webp", title: "Wheel Guard", icon: "/images/solutions/wheel-guard-icon.webp", href: "https://app-eu1.hubspot.com/documents/143984377/view/851236203?accessId=ba7288" },
+  { image: "/images/solutions/safety-factor.webp", title: "Safety Factor", icon: "/images/solutions/safety-factor-icon.webp", href: "https://app-eu1.hubspot.com/documents/143984377/view/851236139?accessId=7e6959" },
+  { image: "/images/solutions/smart-workshop.webp", title: "Smart Workshop", icon: "/images/solutions/smart-workshop-icon.webp", href: "https://app-eu1.hubspot.com/documents/143984377/view/851576514?accessId=f1fa91" },
+  { image: "/images/solutions/desvios-aparatos-via.webp", title: "Desvíos y aparatos de vía", icon: "/images/solutions/desvios-aparatos-via-icon.webp", href: "/desvios-aparatos-via" },
+  { image: "/images/solutions/auscultacion-dinamica-via.webp", title: "Auscultación dinámica de vía y confort de vehículos", icon: "/images/solutions/auscultacion-dinamica-via-icon.webp", href: "/auscultacion-dinamica-via" },
+  { image: "/images/solutions/vehiculos-ferroviarios.webp", title: "Vehículos ferroviarios", icon: "/images/solutions/vehiculos-ferroviarios-icon.webp", href: "/railVehicle" }
+];
+---
+
+<section class="bg-neutral-900 flex justify-center mx-auto lg:shadow-md lg:rounded-2xl my-5">
+  <div class="lg:w-full">
+    <h2 class="text-xl font-semibold md:text-5xl text-limmat block text-center uppercase">Nuestras soluciones</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 pb-0 my-10">
+      {solutions.map((solution) => (
+        <CardSolution image={solution.image} title={solution.title} icon={solution.icon}, href={solution.href} />
+      ))}
+    </div>
+  </div>
+</section>

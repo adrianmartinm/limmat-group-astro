@@ -1,0 +1,58 @@
+---
+// src/components/Home/HomeAssociations.astro
+import Carousel from "../Common/Carousel.astro";
+const images = [
+    {
+        src: "/images/asociaciones/irse-2.webp",
+        alt: "Institution of Railway Signal Engineers",
+    },
+    {
+        src: "/images/asociaciones/ptfe.webp",
+        alt: "Plataforma Tecnológica Ferroviaria Española",
+    },
+    {
+        src: "/images/asociaciones/railgrup.webp",
+        alt: "Railgrup",
+    },
+    {
+        src: "/images/asociaciones/manuket-2.webp",
+        alt: "Plataforma Española de Fabricación Avanzada MANU-KET",
+    },
+    {
+        src: "/images/asociaciones/rih.webp",
+        alt: "Railway Innovation Hub – Centro de innovación ferroviaria",
+    },
+    {
+        src: "/images/asociaciones/aiaror-2.webp",
+        alt: "International Association of Railway Operations Research",
+    },
+];
+---
+
+<section class="flex justify-center mx-auto lg:shadow-md lg:rounded-2xl my-5">
+    <div class="lg:mx-8 lg:max-w-6xl lg:w-full">
+        <h2
+            class="text-xl font-semibold md:text-5xl text-limmat block text-center uppercase"
+        >
+            Asociaciones y Grupos de trabajo
+        </h2>
+
+        <p class="dark:text-gray-300 text-start mt-8">
+            Limmat pertenece y participa activamente en diferentes asociaciones
+            sectoriales y grupos de trabajo, manteniendo contacto permanente con
+            otras empresas y profesionales manteniéndose continuamente informada
+            de las últimas novedades que se produzcan.
+        </p>
+
+        <div
+            class="w-full p-4 border bg-white lg:shadow-md lg:rounded-2xl mt-8"
+        >
+            <Carousel
+                id="associations-carousel"
+                images={images}
+                imageClass="w-48 h-auto max-h-28 object-contain"
+                visibleImages={3}
+            />
+        </div>
+    </div>
+</section>

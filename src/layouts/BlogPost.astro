@@ -1,87 +1,90 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import HeroVideo from '../components/HeroVideo.astro';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/Layout/BaseHead.astro";
+import Header from "../components/Layout/Header.astro";
+import Footer from "../components/Layout/Footer.astro";
+import HeroVideo from "../components/Layout/HeroVideo.astro";
+import { ViewTransitions } from "astro:transitions";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, postImage } = Astro.props;
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog");
+allPosts.map((post) => {
+	console.log(post); // Usa 'slug' en lugar de 'url'
+});
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
+		<ViewTransitions />
 	</head>
 
-	<body>
+	<body class="bg-black">
+		<!-- Header -->
 		<Header />
-		<HeroVideo></HeroVideo>
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
-					</div>
+
+		<!-- Hero Section -->
+		<HeroVideo videoFileName="publicaciones.webm" />
+
+		<ul>
+			{
+				allPosts.map((post) => (
+					<li>
+						<a href={`/blog/${post.slug}`}>{post.data.title}</a>
+					</li>
+				))
+			}
+		</ul>
+
+		<!-- Post Content -->
+		<main class="w-[80vw] md:w-[50vw] mx-auto py-16">
+			<article class="shadow-md md:bg-neutral-950 md:rounded-2xl md:p-5">
+				<h1 class="font-semibold text-limmat text-xl md:text-3xl">
+					{title}
+				</h1>
+				{
+					postImage && (
+						<img
+							class="w-full h-auto md:max-h-[500px] block my-8"
+							src={postImage}
+							alt=""
+						/>
+					)
+				}
+
+				<style is:inline>
+					.post-content p {
+						margin-bottom: 1em !important;
+						color: rgb(229 229 229) !important;
+						font-size: 1rem; /* 16px */
+						line-height: 1.5rem; /* 24px */
+					}
+					.post-content a {
+						margin-bottom: 1em !important;
+						color: #fd8e00 !important;
+					}
+					.post-content a:hover {
+						color: rgb(229 229 229) !important;
+					}
+
+					.post-content ol,
+					ul {
+						list-style: unset !important;
+						margin-left: 1em !important;
+						font-size: 1rem; /* 16px */
+						line-height: 1.5rem; /* 24px */
+					}
+				</style>
+				<div class="post-content mx-auto">
 					<slot />
 				</div>
 			</article>
 		</main>
+
 		<Footer />
 	</body>
 </html>
