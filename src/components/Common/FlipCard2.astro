@@ -1,0 +1,71 @@
+---
+const image = "/images/compromisos/calidad.webp";
+const title = "Calidad";
+const description =
+    "Buscamos ofrecer un servicio de máxima calidad. Para ello siempre aportamos talento y experiencia en todos nuestros proyectos siguiendo los procesos definidos en nuestro sistema de calidad certificado mediante la normativa ISO 9001:2015.";
+---
+
+<div
+    class="card relative bg-cover bg-center rounded-xl overflow-hidden shadow-lg"
+    style={`background-image: url(${image})`}
+>
+    <div class="h-full w-full flex items-center justify-center">
+        <p class="text-3xl text-white">{title}</p>
+    </div>
+
+    <div
+        class="card__content card relative bg-cover bg-center rounded-xl overflow-hidden shadow-lg px-8"
+        style={`background-image: url(${image})`}
+    >
+        <p class="text-2xl text-white text-center">{title}</p>
+        <p class="text-sm text-neutral-300">{description}</p>
+    </div>
+</div>
+
+<style>
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    }
+
+    .card__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        transform: rotateX(-90deg);
+        transform-origin: bottom;
+        transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .card:hover .card__content {
+        transform: rotateX(0deg);
+    }
+
+    .card:hover svg {
+        scale: 0;
+    }
+
+    .card__description {
+        margin: 10px 0 10px;
+        font-size: 12px;
+        color: #777;
+        line-height: 1.4;
+    }
+
+    .card__button {
+        padding: 15px;
+        border-radius: 8px;
+        background: #777;
+        border: none;
+        color: white;
+    }
+
+    .secondary {
+        background: transparent;
+        color: #777;
+        border: 1px solid #777;
+    }
+</style>
