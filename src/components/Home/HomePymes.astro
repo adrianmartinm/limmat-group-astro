@@ -1,0 +1,40 @@
+---
+// src\components\Home\HomePymes.astro
+---
+
+<section
+    class="flex justify-center mx-auto lg:shadow-md lg:rounded-2xl my-5 p-4 lg:p-8"
+>
+    <div class="w-full max-w-6xl">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center"
+        >
+            <!-- Columna de texto -->
+            <div class="order-2 md:order-1 text-center md:text-left">
+                <h2
+                    class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-300 mb-4"
+                >
+                    Limmat representa a las PYMES Europeas en procesos de
+                    estandarización de digitalización y ciberseguridad
+                    ferroviaria.
+                </h2>
+            </div>
+
+            <!-- Columna de imágenes -->
+            <div
+                class="order-1 md:order-2 flex flex-col sm:flex-row justify-center items-center md:justify-end space-y-4 sm:space-y-0 sm:space-x-4"
+            >
+                <img
+                    src="/images/asociaciones/cenelec.webp"
+                    alt="CEN-CENELEC - Comité Europeo de Normalización Electrotécnica"
+                    class="max-w-[200px] w-full h-auto"
+                />
+                <img
+                    src="/images/asociaciones/sbs.webp"
+                    alt="Small Business Standards"
+                    class="max-w-[200px] w-full h-auto"
+                />
+            </div>
+        </div>
+    </div>
+</section>

@@ -7,6 +7,8 @@ import Section from "../components/Layout/Section.astro";
 import Separator from "../components/Layout/Separator.astro";
 import Clients from "../components/Home/HomeClients.astro";
 import Associations from "../components/Home/HomeAssociations.astro";
+import Pymes from "../components/Home/HomePymes.astro";
+import Collaboration from "../components/Home/HomeCollaboration.astro";
 ---
 
 <Layout>
@@ -46,6 +48,20 @@ import Associations from "../components/Home/HomeAssociations.astro";
 		<Section>
 			<Associations />
 		</Section>
+
+		<!-- Section Separator -->
+		<Separator />
+
+		<!-- Section "PYMS" -->
+		<Section>
+			<Pymes />
+		</Section>
+
+		<!-- Section Separator -->
+		<Separator />
+
+		<!-- Section "Encuentra cómo podemos colaborar juntos" -->
+		<Collaboration />
 	</main>
 </Layout>
 
